@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3b0764, #6e04b7);
+    color: #333;
+}
+
+/* Card Container */
+.faq-card {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 20px;
+}
+
+/* FAQ Title */
+.faq-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #3b0764;
+    font-weight: bold;
+}
+
+/* FAQ Items */
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    margin: 10px 0;
+    padding-bottom: 10px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+/* Hide Radio Buttons */
+.faq-toggle {
+    display: none;
+}
+
+/* FAQ Questions */
+.faq-question {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+    transition: color 0.3s;
+}
+
+.faq-question:hover {
+    color: #6e04b7;
+}
+
+/* Add "+" Symbol */
+.faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    color: #6e04b7;
+    transition: transform 0.3s;
+}
+
+/* FAQ Answers */
+.faq-answer {
+    display: none;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Show Answer When FAQ is Selected */
+.faq-toggle:checked + .faq-question + .faq-answer {
+    display: block;
+}
+
+/* Change "+" to "–" When Active */
+.faq-toggle:checked + .faq-question::after {
+    content: "–";
+    transform: rotate(0deg);
+}
